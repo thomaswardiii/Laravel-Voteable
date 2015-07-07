@@ -18,7 +18,7 @@ And then include the service provider within `app/config/app.php`.
 
 ```php
 'providers' => [
-    'DraperStudio\Voteable\VoteableServiceProvider'
+    DraperStudio\Voteable\VoteableServiceProvider::class
 ];
 ```
 
@@ -36,12 +36,13 @@ php artisan vendor:publish && php artisan migrate
 
 namespace App;
 
-use DraperStudio\Voteable\Traits\Voteable;
+use DraperStudio\Voteable\Traits\HasVote;
+use DraperStudio\Voteable\Traits\HasVoteInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class User extends Model implements HasVoteInterface
 {
-    use Voteable;
+    use HasVote;
 }
 
 ```

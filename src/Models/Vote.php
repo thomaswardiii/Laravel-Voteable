@@ -16,7 +16,7 @@ class Vote extends Model
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function voteable()
     {
@@ -96,21 +96,21 @@ class Vote extends Model
     /**
      * @param Model $voteable
      *
-     * @return mixed
+     * @return bool
      */
     public static function up(Model $voteable)
     {
-        return (new static())->cast($voteable, 1);
+        return static::cast($voteable, 1);
     }
 
     /**
      * @param Model $voteable
      *
-     * @return mixed
+     * @return bool
      */
     public static function down(Model $voteable)
     {
-        return (new static())->cast($voteable, -1);
+        return static::cast($voteable, -1);
     }
 
     /**

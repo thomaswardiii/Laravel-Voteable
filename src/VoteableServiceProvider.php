@@ -4,10 +4,13 @@ namespace DraperStudio\Voteable;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class VoteableServiceProvider.
+ */
 class VoteableServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap the application services.
+     * Bootstrap any application services.
      */
     public function boot()
     {
@@ -17,7 +20,7 @@ class VoteableServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the application services.
+     * Register any application services.
      */
     public function register()
     {

@@ -5,9 +5,9 @@ namespace DraperStudio\Voteable\Traits;
 use DraperStudio\Voteable\Models\Vote;
 
 /**
- * Class Voteable.
+ * Class HasVote.
  */
-trait Voteable
+trait HasVote
 {
     /**
      * @return mixed
